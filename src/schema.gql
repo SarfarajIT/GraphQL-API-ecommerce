@@ -1,0 +1,50 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Subcategory {
+  _id: ID!
+  name: String!
+  categoryId: ID!
+}
+
+type Category {
+  _id: ID!
+  name: String!
+  subcategories: [Subcategory!]
+}
+
+type Query {
+  getAllCategories: [Category!]!
+  getAllCategoriesWithSubcategories: [Category!]!
+  getAllSubcategories: [Subcategory!]!
+}
+
+type Mutation {
+  createCategory(input: CreateCategoryInput!): Category!
+  updateCategory(input: UpdateCategoryInput!): Category!
+  removeCategory(id: String!): Category!
+  createSubcategory(input: CreateSubcategoryInput!): Subcategory!
+  updateSubcategory(input: UpdateSubcategoryInput!): Subcategory!
+  removeSubcategory(id: String!): Subcategory!
+}
+
+input CreateCategoryInput {
+  name: String!
+}
+
+input UpdateCategoryInput {
+  name: String
+  id: ID!
+}
+
+input CreateSubcategoryInput {
+  name: String!
+  categoryId: ID!
+}
+
+input UpdateSubcategoryInput {
+  name: String
+  categoryId: ID
+  id: ID!
+}
