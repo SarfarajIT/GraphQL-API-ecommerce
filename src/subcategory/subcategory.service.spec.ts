@@ -11,7 +11,7 @@ describe('SubcategoryService', () => {
 
     service = module.get<SubcategoryService>(SubcategoryService);
   });
-// dasfasdf
+
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
